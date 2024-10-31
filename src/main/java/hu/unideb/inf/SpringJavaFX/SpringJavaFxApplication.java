@@ -12,11 +12,16 @@ public class SpringJavaFxApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringJavaFxApplication.class, args);
 
-		Person p = new Person();
+		/*Person p = new Person();
 		p.setId(10);
 		p.setName("Robert");
 		p.setDateOfBirth(LocalDate.of(1998,12,15));
-		Person p2 = new Person(1,"tom", LocalDate.of(1999,11,11));
+		Person p2 = new Person(1,"tom", LocalDate.of(1999,11,11));*/
+
+		Person p = Person.builder()
+				.name("Winch Eszter")
+				.dateOfBirth(LocalDate.of(1999,11,05))
+				.build();
 	}
 
 }
