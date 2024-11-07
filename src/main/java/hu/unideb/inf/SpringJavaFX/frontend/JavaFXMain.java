@@ -1,6 +1,7 @@
 package hu.unideb.inf.SpringJavaFX.frontend;
 
 import hu.unideb.inf.SpringJavaFX.SpringJavaFxApplication;
+import hu.unideb.inf.SpringJavaFX.SpringManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,7 +11,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 public class JavaFXMain extends Application {
-    Manager manager;
+    Manager manager = new SpringManager();
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -19,6 +20,7 @@ public class JavaFXMain extends Application {
         stage.show();
 
         manager.startBackend();
+        System.out.println("Spring -> " + manager.getPersonName());
     }
 
     @Override
